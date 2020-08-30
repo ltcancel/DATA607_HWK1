@@ -8,22 +8,42 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+# Intro
 
-Latest polls data from https://data.fivethirtyeight.com/
+The data for this assignment is from the lastest Governor Polls data found on the [FiveThirtyEight](https://data.fivethirtyeight.com/) site. 
 
 
-Load libraries
-```{r}
+### Load libraries
+```{r, error=FALSE, warning=FALSE}
 #install.packages("RCurl")
 library(RCurl)
+library(ggplot2)
 ```
 
-Load Polls Data
+### Load Governors Polls Data from GitHub and create a dataframe 
 ```{r}
 x <- getURL("https://raw.githubusercontent.com/ltcancel/DATA607_HWK1/master/Week1/polls/governor_polls.csv")
 
 df <- read.csv(text = x)
 
 head(df)
+```
+
+# Conclusion
+
+I would use bar charts to explore this data starting with a count of candidates based on party (example below). Since there is a low count for most of the candidate parties, I would investigate the top 5 parties and break down who makes up the top 5 parties. 
+
+```{r}
+ggplot(df) +
+  geom_bar(mapping = aes(x = candidate_party)) +
+  coord_flip()
+```
+
+The method of voting would also be an interesting data point to explore. 
+
+```{r}
+ggplot(df) +
+  geom_bar(mapping = aes(x = methodology)) +
+  coord_flip()
 ```
 
