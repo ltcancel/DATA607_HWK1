@@ -372,14 +372,14 @@ summary {
 <div id="intro" class="section level1">
 <h1>Intro</h1>
 <p>The data for this assignment is from the lastest Governor Polls data found on the <a href="https://data.fivethirtyeight.com/">FiveThirtyEight</a> site.</p>
-<div id="load-libraries" class="section level2">
-<h2>Load libraries</h2>
+<div id="load-libraries" class="section level3">
+<h3>Load libraries</h3>
 <pre class="r"><code>#install.packages(&quot;RCurl&quot;)
 library(RCurl)
 library(ggplot2)</code></pre>
 </div>
-<div id="load-governors-polls-data-from-github-and-create-a-dataframe" class="section level2">
-<h2>Load Governors Polls Data from GitHub and create a dataframe</h2>
+<div id="load-governors-polls-data-from-github-and-create-a-dataframe" class="section level3">
+<h3>Load Governors Polls Data from GitHub and create a dataframe</h3>
 <pre class="r"><code>x &lt;- getURL(&quot;https://raw.githubusercontent.com/ltcancel/DATA607_HWK1/master/Week1/polls/governor_polls.csv&quot;)
 
 df &lt;- read.csv(text = x)
