@@ -1,0 +1,31 @@
+---
+title: "HWK1"
+author: "LeTicia Cancel"
+date: "8/29/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Load libraries
+```{r}
+#install.packages("RCurl")
+library(RCurl)
+```
+
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Load Polls Data
+```{r}
+x <- getURL("https://raw.githubusercontent.com/ltcancel/DATA607_HWK1/master/Week1/polls/governor_polls.csv")
+
+df <- read.csv(text = x)
+
+head(df)
+```
+
