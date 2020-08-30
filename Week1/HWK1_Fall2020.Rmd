@@ -9,15 +9,13 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+Latest polls data from https://data.fivethirtyeight.com/
+
+
 Load libraries
 ```{r}
 #install.packages("RCurl")
 library(RCurl)
-```
-
-
-```{r pressure, echo=FALSE}
-plot(pressure)
 ```
 
 Load Polls Data
